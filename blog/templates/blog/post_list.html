@@ -22,7 +22,8 @@
                 </div>                
             </div>
             <p>{{ post.text|linebreaksbr|truncatewords:15 }}</p>
+            <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.approved_comments.count }} / ({{ post.comments.count }})</a>
         </div>
 
-        {% endfor %}
+    {% endfor %}
 {% endblock %}
